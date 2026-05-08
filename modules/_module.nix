@@ -101,15 +101,19 @@ in
         };
       };
       config = {
-        devShells = rec {
-          venv = mkIf cfg.enableDevshell (mkDevshell {
-            withVenv = true;
-          });
-          uv = mkIf cfg.enableUvDevshell (mkDevshell {
-            withVenv = false;
-          });
-          default = mkIf cfg.enableDevshell (mkDefault venv);
-        };
+        devShells =
+          let
+            devshell = mkDevshell {
+              withVenv = true;
+            };
+          in
+          {
+            venv = mkIf cfg.enableDevshell devshell;
+            uv = mkIf cfg.enableUvDevshell (mkDevshell {
+              withVenv = false;
+            });
+            default = mkIf cfg.enableDevshell (mkDefault devshell);
+          };
         packages =
           let
             app = mkApplication {
