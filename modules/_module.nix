@@ -114,7 +114,7 @@ in
           let
             app = mkApplication {
               inherit (venv) venv;
-              package = venv._pkg;
+              package = venv.pkg;
             };
           in
           {
