@@ -122,8 +122,6 @@ in
             default = mkIf cfg.enableBinPackage (mkDefault app);
           };
       };
-
     }
-
   );
 }
