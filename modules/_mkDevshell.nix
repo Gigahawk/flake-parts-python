@@ -27,7 +27,7 @@
       UV_PYTHON = pythonPackage.interpreter;
       UV_PYTHON_DOWNLOADS = "never";
     }
-    // lib.optionaAttrs pkgs.stdenv.isLinux {
+    // lib.optionalAttrs pkgs.stdenv.isLinux {
       LD_LIBRARY_PATH = lib.makeLibraryPath pkgs.pythonManylinuxPackages.manylinux1;
     };
 
