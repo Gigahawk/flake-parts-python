@@ -2,7 +2,10 @@
   description = "A batteries included flake-parts wrapper for uv2nix";
 
   inputs = {
+    # TODO: is there some convenient way to make these linked?
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-lib.url = "github:NixOS/nixpkgs/nixos-unstable?dir=lib";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     treefmt-nix = {

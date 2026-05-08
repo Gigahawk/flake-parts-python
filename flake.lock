@@ -63,6 +63,24 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib_2": {
+      "locked": {
+        "dir": "lib",
+        "lastModified": 1777954456,
+        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
+        "type": "github"
+      },
+      "original": {
+        "dir": "lib",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "pyproject-build-systems": {
       "inputs": {
         "nixpkgs": [
@@ -114,6 +132,7 @@
         "flake-parts": "flake-parts",
         "import-tree": "import-tree",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-lib": "nixpkgs-lib_2",
         "pyproject-build-systems": "pyproject-build-systems",
         "pyproject-nix": "pyproject-nix",
         "treefmt-nix": "treefmt-nix",
