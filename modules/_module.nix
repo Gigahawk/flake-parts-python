@@ -27,7 +27,7 @@ in
     let
       cfg = config.wrapPython;
       pkg-name = import ./_package-name.nix { inherit (cfg) workspaceRoot; };
-      venv = import ./_venv {
+      venv = import ./_venv.nix {
         inherit (nixpkgs-lib) lib;
         inherit pkgs;
 
