@@ -123,6 +123,7 @@ in
           in
           {
             ${pkg-name} = mkIf cfg.enableBinPackage app;
+            inherit (venv) venv venvAll;
             default = mkIf cfg.enableBinPackage (mkDefault app);
           };
       };
