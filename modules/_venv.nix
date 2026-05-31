@@ -47,5 +47,6 @@ in
 {
   pkg = pythonSet.${pkg-name};
   venv = pythonSet.mkVirtualEnv "${pkg-name}-env" workspace.deps.default;
+  venvAll = pythonSet.mkVirtualEnv "${pkg-name}-env-all" workspace.deps.all;
   editableVenv = editablePythonSet.mkVirtualEnv "${pkg-name}-dev-env" workspace.deps.all;
 }
