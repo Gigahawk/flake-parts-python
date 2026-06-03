@@ -19,6 +19,7 @@
       [
         uv
         git
+        pythonPackage
       ]
       ++ lib.optional withVenv virtualenv;
 
