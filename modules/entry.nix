@@ -15,6 +15,7 @@ in
       pyproject-nix
       pyproject-build-systems
       nixpkgs-lib
+      uv2nix-hammer-overrides
       ;
   };
 }

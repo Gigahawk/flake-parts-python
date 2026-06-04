@@ -8,6 +8,7 @@
   uv2nix,
   pyproject-nix,
   pyproject-build-systems,
+  uv2nix-hammer-overrides,
   ...
 }:
 let
@@ -23,13 +24,14 @@ let
     root = "$REPO_ROOT";
   };
 
-  pyprojectOverrides =
+  pyprojectOverrides = lib.composeExtensions (uv2nix-hammer-overrides.overrides_debug pkgs) (
     if pyprojectOverridesPath != null then
       (import pyprojectOverridesPath {
         inherit pythonPackage hacks pkgs;
       })
     else
-      (_final: _prev: { });
+      (_final: _prev: { })
+  );
 
   pythonSet =
     (pkgs.callPackage pyproject-nix.build.packages {

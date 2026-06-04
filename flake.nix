@@ -32,6 +32,12 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    uv2nix-hammer-overrides = {
+      #url = "github:TyberiusPrime/uv2nix_hammer_overrides";
+      url = "github:Gigahawk/uv2nix_hammer_overrides/fix-pyqt5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);

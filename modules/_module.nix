@@ -4,6 +4,7 @@
   uv2nix,
   pyproject-nix,
   pyproject-build-systems,
+  uv2nix-hammer-overrides,
   ...
 }:
 let
@@ -37,7 +38,12 @@ in
           pyprojectOverridesPath
           ;
 
-        inherit uv2nix pyproject-nix pyproject-build-systems;
+        inherit
+          uv2nix
+          pyproject-nix
+          pyproject-build-systems
+          uv2nix-hammer-overrides
+          ;
       };
       mkDevshell = import ./_mkDevshell.nix {
         inherit pkgs venv;
